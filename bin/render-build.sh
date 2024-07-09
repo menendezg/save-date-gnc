@@ -2,7 +2,6 @@
 # exit on error
 set -o errexit
 
-yarn install --check-files
 bundle install
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
