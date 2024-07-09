@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+yarn install --check-files
 
 if gem list --no-installed --exact --silent foreman; then
   echo "Installing foreman..."
