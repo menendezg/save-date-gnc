@@ -15,10 +15,10 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true%>
-    <%= javascript_include_tag "/assets/count_down.js", "data-turbo-track": "reload", defer: true%>
   </head>
 
   <body>
     <%= yield %>
+    <%= javascript_include_tag 'count_down.js' %>
   </body>
 </html>
