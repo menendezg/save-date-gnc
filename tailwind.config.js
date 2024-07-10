@@ -7,8 +7,10 @@ module.exports = {
   ],
   theme: {
     fontFamily:{
-      "serif":["Sinthya"],
+      "serif":["Dancing Script"],
       "sans": ["montserrat"],
+      "text-cursive": ["PlayWrite HR"],
+      "text-playfair": ["Playfair Display"]
     },
     extend: {},
   },

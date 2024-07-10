@@ -1,10 +1,12 @@
 <!-- general container  -->
 <div class="flex items-center justify-center h-screen bg-[#F1EDE9]">
-  <!-- card content-->
+  <!-- card container-->
   <div class="p-2 mx-6">
-    <h1 class="font-serif text-center text-8xl p-10 m-10 mb-10"><%= @couple %></h1>
-    <p class="font-sans text-center p-4 pb-1 mb-0">Abril 05, 2025</p>
-    <p class="font-serif text-center p-4 text-4xl">Save the date</p>
-    <hr>
+    <div class="flex flex-col">
+      <h1 class="font-serif text-center text-8xl p-10"><%= @couple %></h1>
+      <p class="font-text-playfair text-center text-2xl p-4 pb-1">Abril 05, 2025</p>
+      <p class="font-serif text-center p-4 text-6xl mt-10">Save the date</p>
+      <hr>
+    </div>
   </div>
 </div>
