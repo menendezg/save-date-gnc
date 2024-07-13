@@ -1,18 +1,31 @@
 <!-- general container  -->
-<div class="flex items-center justify-center h-screen bg-[#F1EDE9]">
+<div class="flex items-center justify-center">
   <!-- card container-->
-  <div class="p-2 mx-6">
+  <div class="flex p-2 mx-6">
     <div class="flex flex-col">
       <h1 class="font-serif text-center text-8xl p-10"><%= @couple %></h1>
-      <p class="font-text-playfair text-center text-2xl p-4 pb-1">Abril 05, 2025</p>
+      <p class="font-text-playfair text-center text-2xl p-4 pb-1">
+        Abril 05, 2025
+      </p>
       <p class="font-serif text-center p-4 text-6xl mt-10">Save the date</p>
-      <hr>
+      <hr />
       <div class="flex flex-row justify-center p-5">
         <div class="pr-2 font-text-playfair text-2xl" id="days"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="hours"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="minutes"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="seconds"></div>
       </div>
+      <div class="flex p-4 justify-center items-center b-gray-100">
+        <%= video_tag "fake_video.mp4",
+            controls: true,
+            autoplay: true,
+            loop: true,
+            muted: true,
+            size: '600',
+            class: 'w-full p-1 max-w-2xl rounded-lg shadow-lg'
+          %>
+      </div>
     </div>
+    
   </div>
 </div>
