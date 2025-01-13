@@ -10,7 +10,8 @@ module.exports = {
       "serif":["Dancing Script"],
       "sans": ["montserrat"],
       "text-cursive": ["PlayWrite HR"],
-      "text-playfair": ["Playfair Display"]
+      "playfair": ["Playfair Display"],
+      "noto": ["Noto Serif"],
     },
     extend: {},
   },
