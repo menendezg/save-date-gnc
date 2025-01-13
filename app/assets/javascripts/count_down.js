@@ -18,3 +18,34 @@ var countDownCall = setInterval(function(){
         document.getElementById("countdown").innerHTML = "EXPIRED";
     }
 }, 1000)
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('carousel');
+    const slides = carousel.children;
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
+  
+    function updateCarousel() {
+      // Move the carousel
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('bg-gray-800', index === currentIndex);
+        indicator.classList.toggle('bg-gray-300', index !== currentIndex);
+      });
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }
+  
+    // Start automatic transition
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+  
+    // Initialize the carousel
+    updateCarousel();
+  });

@@ -8,7 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montez&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <title>SaveTheDateGnC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+    <title>Camila y Gabe</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,6 +22,17 @@
 
   <body class="bg-[#F1EDE9]">
     <%= yield %>
-    <%= javascript_include_tag 'count_down.js' %>
+    <%= javascript_include_tag 'count_down' %>
   </body>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init({
+      duration: 2000, // Animation duration in milliseconds
+      delay: 200,
+
+      easing: "ease-in-out", // Easing style
+      once: true, // Animation occurs only once
+    });
+  });
+</script>
 </html>

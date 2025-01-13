@@ -1,35 +1,119 @@
 <!-- general container  -->
 <div class="flex items-center justify-center">
   <!-- card container-->
-  <div class="flex p-2 mx-6">
-    <div class="flex flex-col">
-      <h1 class="font-serif text-center text-8xl p-10"><%= @couple %></h1>
-      <p class="font-text-playfair text-center text-2xl p-4 pb-1">
-        Abril 05, 2025
-      </p>
-      <p class="font-serif text-center p-4 text-6xl mt-10">Save the date</p>
-      <hr />
-      <div class="flex flex-row justify-center p-5">
+  <div class="flex p-1 mx-2">
+    <div class="flex flex-col border border-slate-300">
+      <h1 class="font-serif text-center text-8xl p-10">
+        <%= @couple %>
+      </h1>
+
+      <div data-aos="fade-right" class="relative w-full max-w-md h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
+        <!-- Carousel -->
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+          <%= image_tag "1.JPG" , alt: "Image 1" , class: "w-full h-full object-cover flex-shrink-0" %>
+            <%= image_tag "2.JPG" , alt: "Image 2" , class: "w-full h-full object-cover flex-shrink-0" %>
+              <%= image_tag "3.JPG" , alt: "Image 3" , class: "w-full h-full object-cover flex-shrink-0" %>
+        </div>
+
+        <!-- Indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+          <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+          <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+        </div>
+      </div>
+
+      <div  class="flex flex-row justify-center p-5">
         <div class="pr-2 font-text-playfair text-2xl" id="days"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="hours"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="minutes"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="seconds"></div>
       </div>
-      <div class="flex p-4 justify-center items-center b-gray-100">
-        <%= video_tag "fake_video_2.mp4",
-            controls: true,
-            autoplay: true,
-            loop: true,
-            size: '600',
-            class: 'w-full p-1 max-w-2xl rounded-lg shadow-lg'
-          %>
+      <div class="flex  flex-col p-4 justify-center items-center b-gray-100">
+        <h1 class="font-serif text-center text-5xl p-4">
+          Fecha:
+        </h1>
+        <p class="font-text-playfair text-center text-2xl p-2 pb-1">
+          Abril 05, 2025
+        </p>
+        <%= audio_tag "test_music.mp3", autoplay: true, loop: true, controls: true %>
+
       </div>
+      
+      <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="400">
+        <!-- Container to fade everything  -->
+        
+        <div
+          class="flex  flex-col p-4 justify-center items-center b-gray-100">
+          <h1 class="font-serif text-center text-5xl p-4">
+            Testigos
+          </h1>
+          <hr class="border-t-2 border-gray-600 rounded-full w-1/2 mx-auto mb-4">
+          <p class="p-1 text-xl">Quimey Cabanal</p>
+          <p class="p-1 text-xl">Fernanda serio</p>
+          <hr>
+          <p class="p-1 text-xl">Maximiliano Gacitua</p>
+          <p class="p-1 text-xl">Matias Aguirre</p>
+        </div>
+        <h1 class=" font-serif text-center text-5xl p-4">
+          Ubicacion
+        </h1>
+        <div class="flex flex-row justify-center mb-10">
+          <a href="https://www.google.com/maps/place/Sal%C3%B3n+del+R%C3%ADo/@-34.5124557,-58.4729985,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb15b32a9fd1d:0xcddefdd43a19e890!8m2!3d-34.5124601!4d-58.4704236!16s%2Fg%2F11bbrs4jw0?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+            class="text-center px-6 py-2 w-60 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Ver mapa
+          </a>
+        </div>
+        <div class="flex flex-col items-center p-5 mb-5">
+          <div class="flex-row justify-center">
+            <%= image_tag "suit.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
+          </div>
+          <h1 class=" font-serif text-center text-5xl p-4">
+            Dress code
+          </h1>
+          <hr class="border-t-2 border-gray-600 rounded-full w-1/2 mx-auto mb-4">
+          <p class="text-center mb-10">Elegante riguroso</p>
+
+          <div class="flex-row justify-center">
+            <%= image_tag "gift.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
+          </div>
+          <h1 class=" font-serif text-center text-5xl p-4">
+            Regalo
+          </h1>
+          <p class="text-center w-60 p-4 mb-10">
+            El mejor regalo para nosotros es contar con tu presencia en este dia
+            tan importante pero si quieres tener un detalle con nosotros puedes ayudanos a contribuir
+            con nuestra luna de miel soñada
+          </p>
+
+          <div class="flex-row justify-center">
+            <%= image_tag "check.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
+          </div>
+          <h1 class=" font-serif text-center text-5xl p-4">
+            confirmación
+          </h1>
+          <p class="text-center w-60 p-4">
+            Para que tengamos la mejor velada posible te pedimos por favor 
+            que confirmes tu asistencia en el siguiente link. Muchas gracias 
+          </p>
+          <a href="https://docs.google.com/forms/d/1S8mpaXudYrHou1c98TQDfSEYOQhZ-d4i3a-YDif-j3c/edit"
+            class="text-center px-6 py-2 w-60 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Haz Click para confirmar
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+
       <div class="flex flex-row justify-center">
         <p class="font-serif text-center">
           Antonio Malaver 401 - Salon del rio
         </p>
       </div>
     </div>
-    
+
   </div>
 </div>

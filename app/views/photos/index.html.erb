@@ -1,0 +1,9 @@
+<h1>Uploaded Photos</h1>
+
+<div id="photos">
+  <%= render @photos %>
+</div>
+
+<%= turbo_frame_tag 'photo_form' do %>
+  <%= render 'form', photo: Photo.new %>
+<% end %>
