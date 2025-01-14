@@ -36,7 +36,7 @@
         <p class="font-text-playfair text-center text-2xl p-2 pb-1">
           Abril 05, 2025
         </p>
-        <%= audio_tag "test_music.mp3", autoplay: true, loop: true, controls: true %>
+        <%= audio_tag "test_music.mp3", autoplay: :autoplay, loop: true, controls: true %>
 
       </div>
       
@@ -50,7 +50,7 @@
           </h1>
           <hr class="border-t-2 border-gray-600 rounded-full w-1/2 mx-auto mb-4">
           <p class="p-1 text-xl">Quimey Cabanal</p>
-          <p class="p-1 text-xl">Fernanda serio</p>
+          <p class="p-1 text-xl">Fernanda Serio</p>
           <hr>
           <p class="p-1 text-xl">Maximiliano Gacitua</p>
           <p class="p-1 text-xl">Matias Aguirre</p>
@@ -72,7 +72,7 @@
             Dress code
           </h1>
           <hr class="border-t-2 border-gray-600 rounded-full w-1/2 mx-auto mb-4">
-          <p class="text-center mb-10 font-noto">Elegante riguroso</p>
+          <p class="text-center mb-10 font-playfair font-medium">Elegante riguroso</p>
 
           <div class="flex-row justify-center">
             <%= image_tag "gift.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
@@ -80,10 +80,15 @@
           <h1 class=" font-serif text-center text-5xl p-4">
             Regalo
           </h1>
-          <p class="text-center w-60 p-4 mb-10 font-noto">
+          <p class=" p-4 text-center w-70 p-1 font-medium mb-6 font-playfair">
             El mejor regalo para nosotros es contar con tu presencia en este dia
             tan importante pero si quieres tener un detalle con nosotros puedes ayudanos a contribuir
             con nuestra luna de miel soñada
+
+          </p>
+          <p class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
+            Alias: boda.camiygabi <br>
+            CBU: 0720091588000002542540
           </p>
 
           <div class="flex-row justify-center">
@@ -92,7 +97,7 @@
           <h1 class=" font-serif text-center text-5xl p-4">
             Confirmación
           </h1>
-          <p class="text-center w-60 p-4 font-noto">
+          <p class="text-center font-medium w-70 p-4 font-playfair">
             Para que tengamos la mejor velada posible te pedimos por favor 
             que confirmes tu asistencia en el siguiente link. Muchas gracias 
           </p>
