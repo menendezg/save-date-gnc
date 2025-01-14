@@ -48,4 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Initialize the carousel
     updateCarousel();
+
   });
+
+
+  
