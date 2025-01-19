@@ -1,0 +1,23 @@
+<div class="flex flex-col font-playfair">
+  <h2 class="text-xl font-bold text-center mb-4"><%= @month_name %> 2025</h2>
+  <div class="grid grid-cols-7 text-center font-semibold text-gray-700">
+    <div>Sun</div>
+    <div>Mon</div>
+    <div>Tue</div>
+    <div>Wed</div>
+    <div>Thu</div>
+    <div>Fri</div>
+    <div>Sat</div>
+  </div>
+  <div class="grid grid-cols-7 gap-1 text-center mt-2">
+    <% @first_day_offset.times do %>
+      <div></div>
+    <% end %>
+    <% (1..@total_days).each do |day| %>
+      <div class="p-2 rounded-full w-10 h-10 flex items-center justify-center 
+      <%= day == @highlight_day ? 'bg-[#CFA3A0] text-white font-bold' : 'hover:bg-gray-200' %>">
+        <%= day %>
+      </div>
+    <% end %>
+  </div>
+<div>
