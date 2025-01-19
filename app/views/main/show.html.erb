@@ -1,11 +1,11 @@
 <!-- general container  -->
-<div class="flex items-center justify-center">
+<div class="sm:w-full md:w-2/5 content-center text-center justify-center border border-slate-300">
   <!-- card container-->
-  <div class="flex p-1 mx-2">
-    <div class="flex flex-col border border-slate-300">
+    <div class="flex flex-row ">
       <h1 class="font-serif text-center text-8xl p-10">
         <%= @couple %>
       </h1>
+    </div>
 
       <div data-aos="fade-right" class="relative w-full max-w-md h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
         <!-- Carousel -->
@@ -29,26 +29,24 @@
         <div class="pl-0 font-text-playfair text-2xl" id="minutes"></div>
         <div class="pl-0 font-text-playfair text-2xl" id="seconds"></div>
       </div>
-      <div class="flex  flex-col p-4 justify-center items-center b-gray-100">
-        <h1 class="font-serif text-center text-5xl p-4">
-          Fecha:
-        </h1>
-        <p class="font-text-playfair text-center text-2xl p-2 pb-1">
-          Abril 05, 2025
-        </p>
+      
+      
+      <h1 class="font-serif text-center text-5xl p-4">
+        Fecha:
+      </h1>
+      <p class="font-text-playfair text-center text-2xl p-2 pb-1">
+        Abril 05, 2025
+      </p>
+      <div class="flex flex-col items-center text-center">
         Presiona play para escuchar
-        <%= audio_tag "test_music.mp3", autoplay: true, controls: true %>
-       
-       
-
-
+        <%= audio_tag "test_music.mp3", autoplay: true, controls: true, muted: true %>
       </div>
       
       <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="400">
         <!-- Container to fade everything  -->
         
         <div
-          class="flex  flex-col p-4 justify-center items-center b-gray-100">
+          class="flex  flex-col p-4 justify-center items-center">
           <h1 class="font-serif text-center text-5xl p-4">
             Testigos
           </h1>
@@ -69,27 +67,19 @@
           </a>
         </div>
         <div class="flex flex-col items-center p-5 mb-5">
-          <div class="flex-row justify-center">
-            <%= image_tag "suit.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
-          </div>
-          <h1 data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400" class=" font-serif text-center text-5xl p-4">
-            Dress code
-          </h1>
-          <hr class="border-t-2 border-gray-600 rounded-full w-1/2 mx-auto mb-4">
-          <p  data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400" class="text-center mb-10 font-playfair font-medium">Elegante riguroso</p>
+          <%= render "main/card", 
+                image:    "suit.png", 
+                title:    "Dress code", 
+                content:  "Elegante riguroso" %>
 
-          <div class="flex-row justify-center">
-            <%= image_tag "gift.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
-          </div>
-          <h1 class=" font-serif text-center text-5xl p-4">
-            Regalo
-          </h1>
-          <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="500" class=" p-4 text-center w-70 p-1 font-medium mb-6 font-playfair">
-            El mejor regalo para nosotros es contar con tu presencia en este dia
-            tan importante pero si quieres tener un detalle con nosotros puedes ayudanos a contribuir
-            con nuestra luna de miel soñada
+          <%= render "main/card", 
+              image:       "gift.png",
+              title:       "Regalo", 
+              content:     "El mejor regalo para nosotros es contar con tu presencia en este dia
+                            tan importante pero si quieres tener un detalle con nosotros puedes ayudanos a contribuir
+                            con nuestra luna de miel soñada" %>
 
-          </p>
+
           <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400" class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
             Alias: boda.camiygabi <br>
             CBU: 0720091588000002542540

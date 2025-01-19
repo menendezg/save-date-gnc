@@ -21,9 +21,11 @@
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true%>
   </head>
 
-  <body class="bg-[#F1EDE9]">
-    <%= yield %>
-    <%= javascript_include_tag 'count_down' %>
+  <body>
+    <div class="flex flex-col mx-auto px-4 items-center bg-[#F1EDE9]">
+      <%= yield %>
+      <%= javascript_include_tag 'count_down' %>
+    </div>
   </body>
   <script>
   document.addEventListener("DOMContentLoaded", function () {
