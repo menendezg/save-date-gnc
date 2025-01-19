@@ -39,7 +39,7 @@
       </p>
       <div class="flex flex-col items-center text-center">
         Presiona play para escuchar
-        <%= audio_tag "test_music.mp3", autoplay: true, controls: true, muted: true %>
+        <%= audio_tag "test_music.mp3", autoplay: true, controls: true %>
       </div>
       
       <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="400">
@@ -62,43 +62,91 @@
         </h1>
         <div class="flex flex-row justify-center mb-10">
           <a href="https://www.google.com/maps/place/Sal%C3%B3n+del+R%C3%ADo/@-34.5124557,-58.4729985,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb15b32a9fd1d:0xcddefdd43a19e890!8m2!3d-34.5124601!4d-58.4704236!16s%2Fg%2F11bbrs4jw0?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
-            class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:#B8C8A2 focus:outline-none focus:ring-2 focus:ring-blue-300">
             Ver mapa
           </a>
         </div>
         <div class="flex flex-col items-center p-5 mb-5">
-          <%= render "main/card", 
-                image:    "suit.png", 
-                title:    "Dress code", 
-                content:  "Elegante riguroso" %>
+
+
 
           <%= render "main/card", 
-              image:       "gift.png",
-              title:       "Regalo", 
-              content:     "El mejor regalo para nosotros es contar con tu presencia en este dia
-                            tan importante pero si quieres tener un detalle con nosotros puedes ayudanos a contribuir
-                            con nuestra luna de miel soñada" %>
+              image:    @data[:dresscode][:img], 
+              title:    @data[:dresscode][:title], 
+              content:  @data[:dresscode][:content] %>
+
+          <%= render "main/card", 
+              image:    @data[:gifts][:img], 
+              title:    @data[:gifts][:title], 
+              content:  @data[:gifts][:content] %>
 
 
           <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400" class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
             Alias: boda.camiygabi <br>
             CBU: 0720091588000002542540
           </p>
-
-          <div class="flex-row justify-center">
-            <%= image_tag "check.png" , alt: "Image 1" , class: "w-20 h-20 object-cover flex-shrink-0" %>
-          </div>
-          <h1 data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="100" class=" font-serif text-center text-5xl p-4">
-            Confirmación
-          </h1>
-          <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="100" class="text-center font-medium w-70 p-4 font-playfair">
-            Para que tengamos la mejor velada posible te pedimos por favor 
-            que confirmes tu asistencia en el siguiente link. Muchas gracias 
-          </p>
+          
+          
+          <%= render "main/card", 
+              image:    @data[:confirmation][:img], 
+              title:    @data[:confirmation][:title], 
+              content:  @data[:confirmation][:content]%>
           <a data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="100" href="https://docs.google.com/forms/d/1S8mpaXudYrHou1c98TQDfSEYOQhZ-d4i3a-YDif-j3c/edit"
-            class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:bg-[#B8C8A2] focus:outline-none focus:ring-2 focus:ring-blue-300">
             Haz Click para confirmar
           </a>
+          <br>
+          <br>
+
+        <h1 class=" font-serif text-center text-5xl p-4">
+          Wedding Timeline
+        </h1>
+
+          <%= render "main/card_timeline",
+              image: "icons/arch.png",
+              time:  "17:20 PM",
+              content: "ceremonia",
+              switch: false %>
+          
+          <%= render "main/card_timeline",
+              image: "icons/martini.png",
+              time:  "18:30 PM",
+              content: "Recepción",
+              switch: true %>
+
+          <%= render "main/card_timeline",
+              image: "icons/dance.png",
+              time:  "19:30 PM",
+              content: "Ingreso al salon",
+              switch: false %>
+
+          <%= render "main/card_timeline",
+              image: "icons/serving-dish.png",
+              time:  "20:30 PM",
+              content: "Plato Principal",
+              switch: true %>
+          
+          <%= render "main/card_timeline",
+              image: "icons/champagne-glass.png",
+              time:  "22:30 PM",
+              content: "Brindis",
+              switch: false %>
+          
+          <%= render "main/card_timeline",
+              image: "icons/party-mask.png",
+              time:  "23:30 PM",
+              content: "Carnaval carioca",
+              switch: true %>
+          
+          <%= render "main/card_timeline",
+              image: "icons/just-married.png",
+              time:  "01:30 AM",
+              content: "Fin de Fiesta",
+              switch: false %>
+
+          
+          <p class="w-64 font-playfair mt-2">La fiesta comienza puntualmente, y no queremos que te pierdas ni un beso ni un baile. <br>
+           <span class="font-bold">Asi que, por favor, llega a tiempo!</span> </p>
 
         </div>
 
