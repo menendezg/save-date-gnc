@@ -1,7 +1,11 @@
 class PhotosController < ApplicationController
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
   def index
     @photos = Photo.all
   end
+  def show
+  end
+
 
   def new
     @photo = Photo.new
@@ -11,18 +15,36 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
     if @photo.save
       respond_to do |format|
-        format.turbo_stream # Uses create.turbo_stream.erb
-        format.html { redirect_to photos_path, notice: 'Photo uploaded successfully.' }
+        format.html { redirect_to photos_path } # Fallback if Turbo is disabled
+        format.turbo_stream
       end
     else
-      respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.replace('photo_form', partial: 'photos/form', locals: { photo: @photo }) }
-        format.html { render :new, alert: 'Failed to upload photo.' }
-      end
+      render :new, status: :unprocessable_entity
+      # respond_to do |format|
+      #   format.turbo_stream # Uses create.turbo_stream.erb
+      #   format.html { redirect_to photos_path, notice: 'Photo uploaded successfully.' }
     end
+  end
+  def edit
+    
+  end
+  def update
+    if @photo.update(photo_params)
+      redirect_to photos_path, notice: "Quote was successfully updated."
+    else
+      render :edit
+    end
+  end
+  def destroy
+    @photo.destroy
+    redirect_to photos_path, notice: "Quote was successfully destroyed."
   end
 
   private
+
+  def set_photo
+    @photo = Photo.find(params[:id])
+  end
 
   def photo_params
     params.require(:photo).permit(:image)

@@ -1,9 +1,13 @@
-<h1>Uploaded Photos</h1>
+<h1>Uploaded Photos - BE THE PARTY</h1>
 
-<div id="photos">
-  <%= render @photos %>
-</div>
 
-<%= turbo_frame_tag 'photo_form' do %>
-  <%= render 'form', photo: Photo.new %>
+<main class="container p-4">
+    <h1>Photos</h1>
+    <div id="photos" class="grid grid-cols-2 md:grid-cols-3 gap-2">
+      <%= render @photos %>
+    </div>
+</main>
+
+<%= turbo_frame_tag "photo_form" do %>
+  <%= render "form", photo: Photo.new %>
 <% end %>

@@ -13,6 +13,7 @@ gem "sqlite3", "~> 1.4"
 
 # autoreload
 gem 'hotwire-livereload'
+gem "simple_form", "~> 5.1.0"
 
 gem 'htmlbeautifier'
 

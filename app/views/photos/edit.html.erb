@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to photo"), photo_path(@photo) %>
+
+  <div class="header">
+    <h1>Edit photo</h1>
+  </div>
+
+  <%= render "form", photo: @photo %>
+</main>

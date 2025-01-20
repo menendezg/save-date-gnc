@@ -1,0 +1,4 @@
+<%= form_with model: Photo.new, html: { multipart: true }, data: { turbo_frame: "_top" } do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit "Upload Photo" %>
+<% end %>

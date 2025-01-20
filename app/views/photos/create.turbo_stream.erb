@@ -1,2 +1,4 @@
-<%= turbo_stream.append 'photos', partial: 'photos/photo', locals: { photo: @photo } %>
-<%= turbo_stream.replace 'photo_form', partial: 'photos/form', locals: { photo: Photo.new } %>
+<%= turbo_stream.append "photos" do %>
+  <%= render @photo %>
+<% end %>
+<%= turbo_stream.replace "photo_form", partial: "photos/form", locals: { photo: Photo.new } %>
