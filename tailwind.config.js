@@ -6,8 +6,8 @@ module.exports = {
     './app/javascript/**/*.js'
   ],
   theme: {
-    fontFamily:{
-      "serif":["Dancing Script"],
+    fontFamily: {
+      "serif": ["Dancing Script"],
       "sans": ["montserrat"],
       "text-cursive": ["PlayWrite HR"],
       "playfair": ["Playfair Display"],

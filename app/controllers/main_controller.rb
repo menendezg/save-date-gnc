@@ -11,6 +11,7 @@ class MainController < ApplicationController
 
   def show
     @couple = "Camila y Gabriel"
+    @pictures = %w[27.jpg 100.jpg 118.jpg 127.jpg 73.jpg 59.jpg 56.jpg 6.jpg]
     @data = {
       dresscode: {
         title: "Dress code",
@@ -31,7 +32,7 @@ class MainController < ApplicationController
                   que confirmes tu asistencia en el siguiente link. Muchas gracias"
       },
       timeline: [
-        TimeLine.new("icons/arch.png", "17:20 PM", "Ceremonia", false),
+        TimeLine.new("icons/arch.png", "17:00 PM", "Ceremonia", false),
         TimeLine.new("icons/martini.png", "18:30 PM", "Recepcion", true),
         TimeLine.new("icons/dance.png", "19:20 PM", "Ingreso al salon", false),
         TimeLine.new("icons/serving-dish.png", "20:30 PM", "Plato Principal", true),

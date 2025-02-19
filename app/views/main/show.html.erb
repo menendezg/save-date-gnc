@@ -6,18 +6,19 @@
       <%= @couple %>
     </h1>
   </div>
-  <div data-aos="fade-right" class="w-full h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
+  <div data-aos="fade-right" class="relative w-full h-96 mx-auto overflow-hidden rounded-lg shadow-lg">
     <!-- Carousel -->
-    <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-      <%= image_tag "1.JPG" , alt: "Image 1" , class: "w-full h-full object-cover flex-shrink-0" %>
-      <%= image_tag "2.JPG" , alt: "Image 2" , class: "w-full h-full object-cover flex-shrink-0" %>
-      <%= image_tag "3.JPG" , alt: "Image 3" , class: "w-full h-full object-cover flex-shrink-0" %>
+    <div id="carousel" class="w-full h-full flex transition-transform duration-500 ease-in-out">
+      <% @pictures.each do |picture| %>
+        <%= image_tag picture, alt: "Image", class: "min-w-full h-full object-cover flex-shrink-0" %>
+      <% end %>
     </div>
+
     <!-- Indicators -->
     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-      <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
-      <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
-      <div class="indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+      <% @pictures.each_with_index do |_, index| %>
+        <div class="indicator w-2 h-2 bg-gray-300 rounded-full" data-index="<%= index %>"></div>
+      <% end %>
     </div>
   </div>
   <div class="flex flex-row justify-center p-5">
@@ -27,21 +28,19 @@
     <div class="pl-0 font-playfair text-4xl" id="seconds"></div>
   </div>
   <div class="flex flex-col items-center text-center p-4">
-    <%= audio_tag "test_music.mp3" , autoplay: true, controls: true %>
+    <%= audio_tag "test_music.mp3", autoplay: true, controls: true %>
   </div>
   <div class="flex flex-row p-4">
     <%= render "calendar" %>
   </div>
-  
   <%# <p class="font-text-playfair text-center text-2xl p-2 pb-1">
     Abril 05, 2025
   </p> %>
   <div class="flex flex-row items-center justify-center mt-14">
     <div class="w-32 h-px bg-[#CFA3A0]"></div>
-    <%= image_tag "icons/like.png" , alt: "Image 1" , class: "w-10 h-10 object-cover flex-shrink-0 mx-4" %>
+    <%= image_tag "icons/like.png", alt: "Image 1", class: "w-10 h-10 object-cover flex-shrink-0 mx-4" %>
     <div class="w-32 h-px bg-[#CFA3A0]"></div>
   </div>
-
   <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="400">
     <!-- Container to fade everything  -->
     <div class="flex  flex-col p-4 justify-center items-center">
@@ -59,39 +58,47 @@
     </h1>
     <div class="flex flex-row justify-center mb-10">
       <a href="https://www.google.com/maps/place/Sal%C3%B3n+del+R%C3%ADo/@-34.5124557,-58.4729985,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb15b32a9fd1d:0xcddefdd43a19e890!8m2!3d-34.5124601!4d-58.4704236!16s%2Fg%2F11bbrs4jw0?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
-        class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:#B8C8A2 focus:outline-none focus:ring-2 focus:ring-blue-300">
+         class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:#B8C8A2 focus:outline-none focus:ring-2 focus:ring-blue-300">
         Ver mapa
       </a>
     </div>
     <div class="flex flex-col items-center p-5 mb-5">
-      <%= render "main/card" , image: @data[:dresscode][:img], title: @data[:dresscode][:title], content:
+      <%= render "main/card", image: @data[:dresscode][:img], title: @data[:dresscode][:title], content:
         @data[:dresscode][:content] %>
-      <%= render "main/card" , image: @data[:gifts][:img], title: @data[:gifts][:title], content:
-          @data[:gifts][:content] %>
+      <%= render "main/card", image: @data[:gifts][:img], title: @data[:gifts][:title], content:
+        @data[:gifts][:content] %>
+
       <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400"
-            class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
-        Alias: boda.camiygabi <br>
-        CBU: 0720091588000002542540
+         class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
+        <span class="text-2xl"> Alias: boda.camiygabi <br>
+          CBU: 0720091588000002542540</span>
       </p>
-      <%= render "main/card" , image: @data[:confirmation][:img], title: @data[:confirmation][:title], content:
-            @data[:confirmation][:content]%>
+      <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400"
+         class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
+          "El día de nuestra boda tendremos un buzón especial para quienes deseen dejarnos un regalo en efectivo.
+          ¡Gracias por acompañarnos en este momento tan especial!"
+      </p>
+      <%= render "main/card", image: @data[:confirmation][:img], title: @data[:confirmation][:title], content:
+        @data[:confirmation][:content] %>
       <a data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="100"
-              href="https://docs.google.com/forms/d/1S8mpaXudYrHou1c98TQDfSEYOQhZ-d4i3a-YDif-j3c/edit"
-              class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:bg-[#B8C8A2] focus:outline-none focus:ring-2 focus:ring-blue-300">
+         href="https://docs.google.com/forms/d/1S8mpaXudYrHou1c98TQDfSEYOQhZ-d4i3a-YDif-j3c/edit"
+         class="text-center px-6 py-2 w-60 text-white bg-[#A3B18A] rounded-lg hover:bg-[#B8C8A2] focus:outline-none focus:ring-2 focus:ring-blue-300">
         Haz Click para confirmar
       </a>
       <br>
       <br>
+
+
       <h1 class="font-serif text-center text-5xl p-4">
         Wedding Timeline
       </h1>
       <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="200" data-aos-offset="200">
         <% @data[:timeline].each do |event_moment| %>
-          <%= render "main/card_timeline" , 
-                      image: event_moment.img, 
-                      time: event_moment.time, content:
-                      event_moment.content, 
-                      switch: event_moment.switch %>
+          <%= render "main/card_timeline",
+                     image: event_moment.img,
+                     time: event_moment.time, content:
+                       event_moment.content,
+                     switch: event_moment.switch %>
         <% end %>
       </div>
       <p class="w-64 font-playfair mt-2">La fiesta comienza puntualmente, y no queremos que te pierdas ni un beso
@@ -99,8 +106,11 @@
         <span class="font-bold">Asi que, por favor, llega a tiempo!</span>
       </p>
     </div>
-
   </div>
+
+  <!--  <div class="flex flex-row justify-center">-->
+  <%#= render "main/invitation_list"%>
+  <!--  </div>-->
   <div class="flex flex-row justify-center">
     <p class="font-serif text-center">
       Antonio Malaver 401 - Salon del rio

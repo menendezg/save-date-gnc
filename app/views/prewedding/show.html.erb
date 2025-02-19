@@ -1,0 +1,16 @@
+<h1>
+  hi
+</h1>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <% images = [ "1.JPG" , "2.JPG", "3.JPG", "4.JPG", "1.JPG", "2.JPG", "3.JPG" ] %>
+
+  <% images.each do |image| %>
+    <%= image_tag image,
+        class: "w-full h-auto object-cover rounded-lg cursor-pointer hover:opacity-80",
+        onclick: "openModal('images/#{image}')" %>
+  <% end %>
+</div>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <img id="modalImage" src="" alt="Expanded" class="rounded-lg">
+</div>
