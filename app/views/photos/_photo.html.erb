@@ -1,9 +1,28 @@
 
   <% if photo.image.attached? %>
     <div>
-      <%= image_tag(photo.image, class: "h-auto max-w-full rounded-lg") %>
-      <div class="p-3">
-        <p class="text-sm text-gray-600">#Photo #Inspiration</p>
+      <%= image_tag(
+            photo.image,
+            class: "col-span-2 row-span-2 rounded-lg object-cover w-full h-full", 
+            data: { action: "click->modal#open" }) 
+      %>
+  </div>
+  <!--
+    <div class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center p-4 hidden" data-modal-target="modal">
+      <div class="relative bg-white p-2 rounded-lg shadow-lg max-w-4xl">
+        <button class="absolute top-2 right-2 text-gray-700 bg-gray-200 rounded-full p-1" data-action="click->modal#close">✕</button>
+        <img data-modal-target="image" class="w-full h-auto rounded-lg">
       </div>
     </div>
+    </div> -->
+    <div class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center p-4 hidden"
+       data-modal-target="modal"
+       data-action="click->modal#close">
+    <div class="relative bg-white p-4 rounded-lg shadow-lg max-w-4xl"
+         data-modal-target="content">  <!-- Content target to prevent closing when clicking inside -->
+      <button class="absolute top-2 right-2 text-gray-700 bg-gray-200 rounded-full p-1"
+              data-action="click->modal#close">✕</button>
+      <img class="w-full h-auto rounded-lg">
+    </div>
+  </div>
   <% end %>
