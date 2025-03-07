@@ -1,9 +1,13 @@
-<h1>Uploaded Photos - BE THE PARTY</h1>
+<div class="container p-2">
+<h1 class="text-center font-playfair text-5xl p-5 pt-10">THE WEDDINGRAM</h1>
+<p class="p-4 text-center w-70 font-medium mb-10 font-playfair">Hola! gracias por haber venido.<br> Queremos tener un recuerdo que desde el primer momento
+puedas acceder a ver las fotos. Asi que se nos ocurrio esta idea. Abajo vas a ver
+un boton. Cuando hagas click podes subir desde tu galeria o sacarla en ese momento. 
+Enjoy the party</p>
 
-
-<main class="bg-gray-100">
-    <h1>Photos</h1>
-    <div data-controller="modal" class="grid grid-cols-2 md:grid-cols-3 gap-3 p-5">
+<main>
+    <h1 class="text-center font-playfair">This is where the fun begins!</h1>
+    <div data-controller="modal" class="grid grid-cols-2 md:grid-cols-3 auto-rows-auto gap-1 p-5">
       <%= render @photos %>
     </div>
 </main>
@@ -11,3 +15,5 @@
 <%= turbo_frame_tag "photo_form" do %>
   <%= render "form", photo: Photo.new %>
 <% end %>
+</div>
+
