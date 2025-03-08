@@ -1,4 +1,4 @@
-<div class="fixed bottom-4 left-1/2 transform -translate-x-1/2">
+<div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-lg">
   <%= simple_form_for photo, html: { class: "photo form hidden", id: "photo-form" } do |f| %>
     <% if photo.errors.any? %>
       <div class="error-message text-red-500 text-sm text-center mb-2">
@@ -12,7 +12,7 @@
 
   <!-- Floating Upload Button -->
   <button onclick="document.getElementById('photo-input').click()" 
-          class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition">
+          class="w-full bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition">
     📷 SUBE LA TUYA!
   </button>
 </div>
