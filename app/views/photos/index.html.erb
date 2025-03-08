@@ -5,15 +5,23 @@ puedas acceder a ver las fotos. Asi que se nos ocurrio esta idea. Abajo vas a ve
 un boton. Cuando hagas click podes subir desde tu galeria o sacarla en ese momento. 
 Enjoy the party</p>
 
-<main>
-    <h1 class="text-center font-playfair">This is where the fun begins!</h1>
-    <div data-controller="modal" class="grid grid-cols-2 md:grid-cols-3 auto-rows-auto gap-1 p-5">
-      <%= render @photos %>
-    </div>
-</main>
-
-<%= turbo_frame_tag "photo_form" do %>
-  <%= render "form", photo: Photo.new %>
-<% end %>
+<% if @photos.present? %>
+  <main>
+      <h1 class="text-center font-playfair">This is where the fun begins!</h1>
+      <div data-controller="modal" class="grid grid-cols-2 md:grid-cols-3 auto-rows-auto gap-1 p-5">
+        <%= render @photos %>
+      </div>
+  </main>
+  
+  <%= turbo_frame_tag "photo_form" do %>
+    <%= render "form", photo: Photo.new %>
+  <% end %>
 </div>
+<% else %>
+  <%= turbo_frame_tag "photo_form" do %>
+    <%= render "form", photo: Photo.new %>
+  <% end %>
+<% end %>
+
+
 
