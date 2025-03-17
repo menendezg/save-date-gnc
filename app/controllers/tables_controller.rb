@@ -5,7 +5,6 @@ class TablesController < ApplicationController
   def index
     # @tables = Table.all
     @tables = Table.all.group_by(&:name)
-    puts @tables
   end
 
   # GET /tables/1 or /tables/1.json
