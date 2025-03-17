@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+<div class="sm:w-full md:w-2/5 content-center text-center justify-center">
+  <div class="flex flex-row justify-center ">
+    <h1 class="font-serif text-center text-8xl p-10">
+      TABLES
+    </h1>
+  </div>
+  <% @tables.each do |key, tables_list| %>
+    <% tables_list.each do |table| %>
+      <div class="flex flex-row justify-center space-x-4 w-full p-3">
+        <div class="flex flex-col items-center justify-center font-playfair w-32">
+          <ul>
+            <% table.guests.each do |guest| %>
+              <li><span class="font-bold"><%= guest.name %> </span></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="flex flex-col text-4xl justify-center items-center p-2 w-32 ">
+          <% if table.name == "1"%>
+            <%= image_tag "mesa_1.png" %>
+          <% elsif table.name == "2"%>
+            <%= image_tag "mesa_2.png" %>
+          <% elsif table.name == "3"%>
+            <%= image_tag "mesa_3.png" %>
+          <% elsif table.name == "4"%>
+            <%= image_tag "mesa_4.png" %>
+          <% elsif table.name == "5"%>
+            <%= image_tag "mesa_5.png" %>
+          <% elsif table.name == "6"%>
+            <%= image_tag "mesa_6.png" %>
+          <% elsif table.name == "7"%>
+            <%= image_tag "mesa_7.png" %>
+          <% elsif table.name == "8"%>
+            <%= image_tag "mesa_8.png" %>
+          <% else %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

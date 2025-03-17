@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :guests
+  resources :tables
   get 'main/show'
   resources :photos
   get 'prewedding', to: "prewedding#show"
