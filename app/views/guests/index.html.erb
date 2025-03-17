@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Guests</h1>
-
-<div id="guests">
-  <% @guests.each do |guest| %>
-    <%= render guest %>
-    <p>
-      <%= link_to "Show this guest", guest %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New guest", new_guest_path %>
+<% if @guest.present? %>
+  <div id="guests">
+    <% @guests.each do |guest| %>
+      <%= render guest %>
+      <p>
+        <%= link_to "Show this guest", guest %>
+      </p>
+    <% end %>
+  </div>
+  <%= link_to "New guest", new_guest_path %>
+<% end %>
