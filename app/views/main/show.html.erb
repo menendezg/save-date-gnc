@@ -13,19 +13,12 @@
         <%= image_tag picture, alt: "Image", class: "min-w-full h-full object-cover flex-shrink-0" %>
       <% end %>
     </div>
-
     <!-- Indicators -->
     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
       <% @pictures.each_with_index do |_, index| %>
         <div class="indicator w-2 h-2 bg-gray-300 rounded-full" data-index="<%= index %>"></div>
       <% end %>
     </div>
-  </div>
-  <div class="flex flex-row justify-center p-5">
-    <div class="pr-2 font-playfair text-4xl" id="days"></div>
-    <div class="pl-0 font-playfair text-4xl" id="hours"></div>
-    <div class="pl-0 font-playfair text-4xl" id="minutes"></div>
-    <div class="pl-0 font-playfair text-4xl" id="seconds"></div>
   </div>
   <div class="flex flex-col items-center text-center p-4">
     <%= audio_tag "test_music.mp3", autoplay: true, controls: true %>
@@ -36,7 +29,6 @@
   <%# <p class="font-text-playfair text-center text-2xl p-2 pb-1">
     Abril 05, 2025
   </p> %>
-
   <div class="div flex flex-col items-center justify-center mt-20">
     <p>Te gustaron nuestras fotos? Querés ver más? Hace click para ver la galeria</p>
     <a href="https://soulblessed.pixieset.com/gabiandnare/"
@@ -44,8 +36,6 @@
       NECESITO MAS FOTOS
     </a>
   </div>
-
-
   <div class="flex flex-row items-center justify-center mt-14">
     <div class="w-32 h-px bg-[#CFA3A0]"></div>
     <%= image_tag "icons/like.png", alt: "Image 1", class: "w-10 h-10 object-cover flex-shrink-0 mx-4" %>
@@ -77,7 +67,6 @@
         @data[:dresscode][:content] %>
       <%= render "main/card", image: @data[:gifts][:img], title: @data[:gifts][:title], content:
         @data[:gifts][:content] %>
-
       <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400"
          class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
         <span class="text-2xl"> Alias: boda.camiygabi <br>
@@ -85,8 +74,8 @@
       </p>
       <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="400"
          class="p-4 text-center w-70 p-1 font-medium mb-10 font-playfair">
-          "El día de nuestra boda tendremos un buzón especial para quienes deseen dejarnos un regalo en efectivo.
-          ¡Gracias por acompañarnos en este momento tan especial!"
+        "El día de nuestra boda tendremos un buzón especial para quienes deseen dejarnos un regalo en efectivo.
+        ¡Gracias por acompañarnos en este momento tan especial!"
       </p>
       <%= render "main/card", image: @data[:confirmation][:img], title: @data[:confirmation][:title], content:
         @data[:confirmation][:content] %>
@@ -97,8 +86,6 @@
       </a>
       <br>
       <br>
-
-
       <h1 class="font-serif text-center text-5xl p-4">
         Wedding Timeline
       </h1>
@@ -117,7 +104,6 @@
       </p>
     </div>
   </div>
-
   <!--  <div class="flex flex-row justify-center">-->
   <%#= render "main/invitation_list"%>
   <!--  </div>-->
